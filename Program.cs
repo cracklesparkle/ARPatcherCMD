@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
-using System.Drawing;
-using Console = Colorful.Console;
 
 
 namespace ARPatcherCMD
@@ -22,7 +18,7 @@ namespace ARPatcherCMD
             if(args.Length == 0)
             {
                 Console.WriteLine("Make sure to do backup of AppraiserRes.dll");
-                Console.WriteLine("Specify path to AppraiserRes.dll (or drop the AppraiserRes.dll if supported):", Color.White);
+                Console.WriteLine("Specify path to AppraiserRes.dll (or drop the AppraiserRes.dll if supported):");
                 mainFunc(Console.ReadLine());
             }
             else
@@ -39,13 +35,13 @@ namespace ARPatcherCMD
                 rLines = GetEmbeddedResource("ARPatcherCMD", "linesToRemove.txt");
 
                 removeLines(target);
-                Console.WriteLine("Done!", Color.Green);
-                Console.WriteLine("Press any key to exit...", Color.White);
+                Console.WriteLine("Done!");
+                Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
             }
             else
             {
-                Console.WriteLine("Specify path to AppraiserRes.dll", Color.Red);
+                Console.WriteLine("Specify path to AppraiserRes.dll");
                 mainFunc(Console.ReadLine());
             }
         }
